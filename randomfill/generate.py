@@ -1,7 +1,7 @@
 from randomfill.walls import Map 
 import sys
 import numpy as np
-
+from tools.conversor import conversor
 
 def generateDefaultRandomMap():
     maze = ""
@@ -67,13 +67,13 @@ def available_path(maze):
     np.random.shuffle(sff_idx)
     return sff_idx    
 
-def add_goal(n_goal,maze,inplace=False):
-    """Add goal in the map.
+def add_hole(n_hole,maze,inplace=False):
+    """Add hole in the map.
 
-    This function will add goal in random location 
+    This function will add hole in random location 
 
     Arguments:
-        n_goal (int): number of goal
+        n_hole (int): number of hole
         maze (narray): narray: numpy array[row][column]
         inplace(bool): overwrite maze or make copy
 
@@ -81,12 +81,12 @@ def add_goal(n_goal,maze,inplace=False):
         narray: numpy array[row][column]
     """
     if inplace:
-        for position in available_path(maze)[:n_goal]:
+        for position in available_path(maze)[:n_hole]:
             maze[position[0]][position[1]] = 3
         return maze
     else:
         maze_copy = maze.copy()
-        for position in available_path(maze_copy)[:n_goal]:
+        for position in available_path(maze_copy)[:n_hole]:
             maze_copy[position[0]][position[1]] = 3
         return maze_copy
 
@@ -112,51 +112,14 @@ def add_block(n_block,maze,inplace=False):
         for position in available_path(maze_copy)[:n_block]:
             maze_copy[position[0]][position[1]] = 4
         return maze_copy
-
-if __name__ == "__main__":
-    tileMap = Map(16,31,"""
-    ||||||||||||||||
-    |...............
-    |...............
-    |...............
-    |...............
-    |...............
-    |...............
-    |...............
-    |...............
-    |...............
-    |...............
-    |...............
-    |.........||||||
-    |.........||||||
-    |.........||||||
-    |.........||||||
-    |.........||||||
-    |...............
-    |...............
-    |...............
-    |...............
-    |...............
-    |...............
-    |...............
-    |...............
-    |...............
-    |...............
-    |...............
-    |...............
-    |...............
-    ||||||||||||||||
-    """)
-
-    # verbosity option (-v)
-    if len(sys.argv) > 1 and sys.argv[1] == "-v":
-        tileMap.verbose = True
-
-    # generate map by adding walls until there's no more room
-    while tileMap.add_wall_obstacle(extend=True):
-        pass
-
-    # reflect the first 14 columns to print the map
-    for line in str(tileMap).splitlines():
-        s = line[:14]
-        print (s+s[::-1])
+  
+def map_template(row=31,column=28):
+    temp_map = generateDefaultRandomMap()
+    np_map = conversor.conv_str2int(row,column,temp_map)
+    add_hole(10,np_map,inplace=True)
+    add_block(3,np_map,inplace=True)
+    start_position = available_path(np_map)[:1][0]
+    end_position = available_path(np_map)[:1][0]
+    np_map[start_position[0]][start_position[1]] = 2
+    np_map[end_position[0]][end_position[1]] = 5
+    return conversor.conv_int2str(np_map)
