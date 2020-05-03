@@ -6,7 +6,7 @@ from searches import anne
 from tools.desenha_mapa import desenha_mapa
 from randomfill.generate import map_template
 import io
-
+from timeit import Timer
 
 def main():
     mapa = {}
@@ -37,7 +37,18 @@ def main():
     # path = astar.aestrela(mapa, inicio, fim)
     # path = bfs.breadth_first_search(mapa,inicio,fim)
     # path = best.best_first_search(mapa, inicio, fim)
-    path = anne.simulated_annealing(mapa, inicio, fim)
+    path =anne.simulated_annealing(mapa, inicio, fim)
+    n_times = 500
+    t = Timer(lambda: dfs.depth_first_search(mapa, inicio, fim))
+    print(f"Time spend to run  DFS algorithm{t.timeit(number=n_times)/n_times}")
+    t2 = Timer(lambda: astar.aestrela(mapa, inicio, fim))
+    print(f"Time spend to run A* algorithm{t2.timeit(number=n_times)/n_times}")
+    t3 = Timer(lambda: bfs.breadth_first_search(mapa, inicio, fim))
+    print(f"Time spend to run BFS algorithm{t3.timeit(number=n_times)/n_times}")
+    t4 = Timer(lambda: dfs.depth_first_search(mapa, inicio, fim))
+    print(f"Time spend to run Best first search algorithm{t4.timeit(number=n_times)/n_times}")
+    t5 = Timer(lambda: anne.simulated_annealing(mapa, inicio, fim))
+    print(f"Time spend to run anneling algorithm{t5.timeit(number=n_times)/n_times}")
 
     if (path != None):
         print()
