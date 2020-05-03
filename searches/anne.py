@@ -1,17 +1,21 @@
 import numpy as np
-from tools.estrutura_dados import No
+from tools import estrutura_dados as No
 
-def simulated_annealing(mapa, inicio, fim, T0=1000, M=300, N=15, alpha=0.85, k=1):
-    for i in range(M):  # usado para diminuir temperatura / passos
-        for j in range(N):  # Quantas procuras fazer pelo vizinho
-            # alpha = fator para decrementar temperatura quanto mais proximo menos movemos
-            # T0 = Temperatura quão próximo devemo estar
-            # k = fator do passo
-            # random para escolher se vamos andar em x ou y depois ver qual sentido para baixo cima ou para direita ou esquerda
+def simulated_annealing(mapa, inicio, fim, T0=1000, M=20000, N=15, alpha=0.999, k=1):
+    inicio_no = No.No(inicio, None)
+    objetivo_no = No.No(fim, None)
+    path = []
+    no_atual = inicio_no
+    (x, y) = no_atual.posicao
+    (goal_x,goal_y) = objetivo_no.posicao
+    path.append(no_atual.posicao)
+    while T0 > 2:
+        for j in range(N):
+
             rand_amp = np.random.rand()
             choose_x_y = np.random.rand()
-            current = No(inicio, None)
-
+            step_x = 0
+            step_y = 0
             if choose_x_y >= 0.5:
                 step_x = k * (1 if rand_amp < 0.5 else -1)
             else:
@@ -20,29 +24,29 @@ def simulated_annealing(mapa, inicio, fim, T0=1000, M=300, N=15, alpha=0.85, k=1
             x_temporary = x + step_x
             y_temporary = y + step_y
 
-            (goal_x,goal_y) = current.posicao
-
-            ## Escolhido calculamos o funcao objetivo ** Ideal era coloca multiplicador para penalizar se estamos proximos de fantasma
             obj_mov_possible = (x_temporary - goal_x) ** 2 + (y_temporary - goal_y) ** 2
 
             obj_val_current = (x_temporary - x) ** 2 + (y_temporary - y) ** 2
 
-            ## fator de indecisao
             rand_factor = np.random.rand()
 
-            ## equacao para determinar se estamos perto ou longe do objetivo
             probality_eq = 1 / (np.exp((obj_mov_possible - obj_val_current) / T0))
 
-            if obj_mov_possible <= obj_val_current:  ## Como estamos mais proximo damos o passo
+            content = mapa.get((x_temporary, y_temporary))
+            if ((content == '#') or (content == '&')):
+                continue
+
+            if (obj_mov_possible <= obj_val_current) | (rand_factor <= probality_eq):
+                no_atual = No.No((x,y),(x_temporary,y_temporary))
                 x = x_temporary
                 y = y_temporary
-            elif rand_factor <= probality_eq:  ## deixa probalidade decidir
-                x = x_temporary
-                y = y_temporary
-            else:  ## Nao vale a pena
+                path.append(no_atual.posicao)
+            else:
                 x = x
                 y = y
 
-            T0 = alpha * T0  ## Penaliza a temperatura
+            if no_atual == objetivo_no:
+                return path[::-1]
 
-            ## Continua algoritmo...
+            T0 = alpha * T0
+    return None
