@@ -1,0 +1,61 @@
+Pac-man é um clássico extremamente popular, ainda nos tempos de Arcade. Aqui, nesta versão proposta, há um labirinto onde o Pacman deve coletar pílulas durante o caminho até chegar no seu objetivo final. Contudo, a vida dele não será fácil. O Pacman não consegue atravessar paredes, sempre prefere caminhos aonde tenham pílulas para ele consumir e não gosta de andar por espaços vazios, sempre evitando-os. Ainda por cima, há três fantasmas espalhados por todo o mapa. Além do Pacman ter muito medo deles, os mesmos podem obstruir um possível caminho ideal, forçando o nosso herói a pensar em alguma alternativa para superar isso.
+
+O labrinto é construído em um arquivo separado chamado 'maze.in'. O seu desenho pode ser bastante customizado em termos de dimensões e layout interno, desde que respeite algumas condições. A primeira é, as bordas devem totalmente fechadas, como mostra o seguinte exemplo:
+
+############################
+#.................$........#
+#.##.#######.##.#######.##.#
+#.##.#######.##.#######.##.#
+#&##...##....##....##...##.#
+#.####.##.########.##.####.#
+#.####.##.########.##.####.#
+#.##....................##&#
+#.##.#### ######## ####.##.#
+#.##.#### #      # ####.##.#
+#......## ###### # ##......#
+#.####.##          ##.####.#
+#.####.## ###  ### ##.####.#
+#...##.## ##    ## ##.##...#
+###.##.   #.    .#   .##.###
+# #.##.## #......# ##.##.# #
+###.##.## ######## ##.##.###
+#......##          ##......#
+#.########## ## ##########.#
+#.########## ## ##########.#
+#............##..&.........#
+#.#######.########.#######.#
+#.#######.########.#######.#
+#....##......  ......##....#
+####.##.####.##.####.##.####
+####.##.####.##.####.##.####
+#@......##...##...##.......#
+############################
+
+A segunda regra do mapa é, dentro dele devem conter apenas os seguintes caracteres:
+- '.': pílulas que o herói deve pegar pelo caminho
+- '@': Pacman
+- '&': Fantasma
+- ' ': Espaços vazios
+- '$': Objetivo final
+
+Quaisquer caracteres diferente disso ocasionará erro e será retornada a seguinte mensagem: "Não há caminho". Essa mesma mensagem será retornada caso a busca também não encontre caminho.
+Dado o mapa, durante a instanciação, o agente deve ler o mapa e capturar as posições inicial e final, no arquivo 'main'. Isso não quer dizer que o layout do mapa será descartado. Ele ainda servirá de apoio durante a busca pelo melhor caminho. Além disso, as dimensões do mesmo serão uteis futuramente. 
+Ainda durante a fase de construção, o agente usará de uma classe importante chamada No, localizado em 'tools/estrutura_dados'. 
+Essa classe será utilizada durante as buscas, já que ela deve pegar o caracter do mapa e representar como um nó de um grafo, com os seguintes componentes:
+- Posição atual: coordenadas x e y
+- Pai: nó de origem
+- G: Distância do nó inicial
+- H: Distância até o nó final. Esse campo, durante a busca informada, conterá o valor calculado pela heurística
+- F: custo total
+
+A regra do jogo é simples e está contidas dentro dos próprios algoritmos de busca, os quais foram elaborados exclusivamente para esse problema.
+Ele deve evitar três elementos, por razões diferentes:
+- '#': parede, ele não consegue atravessar.
+- '&': fantasma, ele tem medo e foge por outro caminho
+- ' ': espaço vazio, ele não consegue andar por espaços vazios, devendo tomar outra rota que contenha pílulas
+
+No melhor cenário, ele consegue calcular o menor caminho, sendo que este não tem fantasmas ou espaços para atrapalhá-lo.
+Pior cenário, além de ter fantasmas e espaços durante o trajeto, o objetivo '$' está envolto de espaços vazios, ou seja, o herói andou por um longo caminho e nem conseguiu pôr as mãos no objetivo.
+Cada pílula que o Pacman coleta conta como 1, ou seja, o custo de cada posição é 1 mesmo.
+
+Ao final da execução do algoritmo de busca, o mapa é mostrado na tela, com o caracter '+' representando o caminho percorrido pelo Pacman, além da lista de nós visitados na forma de coordenadas (x,y) e a contagem, ou seja, o custo total do caminho.

@@ -1,0 +1,25 @@
+O algoritmo A* (A estrela) é uma das opções usadas para resolver o problema do Pacman. O algoritmo de pesquisa A * usa o custo do caminho completo como heurística, o custo para o nó inicial mais o custo estimado para o nó de objetivo. A heurística adotada para orientar a pesquisa é a distância de Manhattan. O algoritmo inicia a partir de um nó inicial, expande vizinhos e atualiza o custo do caminho completo de cada vizinho. Ele seleciona o vizinho com o menor custo e continua até encontrar um nó de objetivo. Isso pode ser implementado com uma fila de prioridade ou classificando a lista de nós abertos em ordem crescente. Neste projeto fora usada a segunda opção.
+
+A * é completo e ideal, ele encontra o caminho mais curto para a meta. A complexidade do tempo é O (n) em uma grade e O (b^d) em um grafo/árvore com um fator de ramificação (b) e uma profundidade (d). O fator de ramificação é o número médio de nós vizinhos que podem ser expandidos a partir de cada nó e a profundidade é o número médio de níveis em um grafo/árvore.
+
+
+O mapa aqui possui um começo (@) e uma meta ($). O objetivo do algoritmo A * é encontrar o caminho mais curto do ponto de partida até o ponto de objetivo o mais rápido possível. O custo do caminho completo (f) para cada nó é calculado como a distância do nó inicial (g) mais a distância do nó da meta (h). As distâncias são calculadas como a distância de manhattan (geometria do táxi) entre os nós. O seu funcionamento se dá da seguinte forma:
+
+- Criar listas para nós abertos e nós fechados (aberto, fechado)
+- Crie um nó inicial e um nó de objetivo, utilizando a classe No
+- Adicione o nó inicial na lista aberta
+- Loop até que a lista aberta esteja vazia
+- Ordene a lista aberta para obter o nó com o menor custo primeiro
+- Obtenha o nó com o menor custo
+- Adicione o nó atual à lista fechada, ou seja, que não será mais visitado
+- Descompacte a posição atual do nó
+- Obter os vizinhos adjacentes
+- Loop nos vizinhos
+- Obter valor do mapa
+- Verifique se o nó é uma parede ('#'), um fantasma ('&') ou um espaço em branco (' '): caso seja algum dos três, os mesmos devem ser ignorados e o algoritmo deve considerar uma opção alternativa.
+- Crie um nó vizinho com a classe No
+- Verifique se o vizinho está na lista fechada. Se sim, verifique a disponibilidade de outro vizinho
+- Gerar heurística (distância de Manhattan)
+- Verifique se o vizinho está na lista aberta e se ele tem um valor f (custo total) menor
+- Se a etapa anterior for verdadeira, adicione vizinho à lista aberta
+- Ao final da iteração dos vizinhos, verifique se atingimos a meta. Se sim, retorne o caminho. Senão, retorne vazio com a mensagem "Não há caminho"
