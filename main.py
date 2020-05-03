@@ -3,7 +3,8 @@ from searches import dfs
 from searches import astar
 from searches import bfs
 from tools.desenha_mapa import desenha_mapa
-
+from randomfill.generate import map_template
+import io
 def main():
     mapa = {}
     chars = ['c']
@@ -11,8 +12,11 @@ def main():
     fim = None
     largura = 0
     altura = 0
-
-    fp = open('./maze/maze.in', 'r')
+    static_map =False
+    if static_map:
+        fp = open('./maze/maze.in', 'r')
+    else:
+        fp = io.StringIO(map_template())
     while len(chars) > 0:
         chars = [str(i) for i in fp.readline().strip()]
         largura = len(chars) if largura == 0 else largura
@@ -34,7 +38,6 @@ def main():
     if (path != None):
         print()
         print('Nos expandidos')
-        print(path)
         print()
         desenha_mapa(mapa, largura, altura, espaco=1, path=path, inicio=inicio, objetivo=fim)
         print()
