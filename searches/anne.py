@@ -11,7 +11,8 @@ def simulated_annealing(mapa, inicio, fim, T0=1000, M=20000, N=15, alpha=0.999, 
     path.append(no_atual.posicao)
     while T0 > 2:  
         for j in range(N):  
-
+    while T0 > 2:
+        for j in range(N):
             rand_amp = np.random.rand()
             choose_x_y = np.random.rand()
             step_x = 0
@@ -31,7 +32,7 @@ def simulated_annealing(mapa, inicio, fim, T0=1000, M=20000, N=15, alpha=0.999, 
             rand_factor = np.random.rand()
 
             probality_eq = 1 / (np.exp((obj_mov_possible - obj_val_current) / T0))
-            
+
             content = mapa.get((x_temporary, y_temporary))
             if ((content == '#') or (content == '&')):
                 continue
@@ -42,6 +43,12 @@ def simulated_annealing(mapa, inicio, fim, T0=1000, M=20000, N=15, alpha=0.999, 
                 y = y_temporary 
                 path.append(no_atual.posicao)
             else:  
+            if (obj_mov_possible <= obj_val_current) | (rand_factor <= probality_eq):
+                no_atual = No.No((x,y),(x_temporary,y_temporary))
+                x = x_temporary
+                y = y_temporary
+                path.append(no_atual.posicao)
+            else:
                 x = x
                 y = y
 
