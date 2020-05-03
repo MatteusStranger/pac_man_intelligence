@@ -47,17 +47,17 @@ class conversor:
         for i in range(0,x):
             for j in range(0,y):
                 if maze[i][j] == 0:
-                    int2str = int2str + '|'
+                    int2str = int2str + '#'
                 elif maze[i][j] == 1:
                     int2str = int2str + '.'
                 elif maze[i][j] == 2:
-                    int2str = int2str + 'I'
+                    int2str = int2str + '@'
                 elif maze[i][j] == 3:
-                    int2str = int2str + '*'
+                    int2str = int2str + ' '
                 elif maze[i][j] == 4:
                     int2str = int2str + '#'
                 elif maze[i][j] == 5:
-                    int2str = int2str + 'F'
+                    int2str = int2str + '$'
             int2str = int2str + '\n'
         
         return int2str
@@ -70,3 +70,4 @@ class conversor:
                 if (value == '.'):
                     str2int[line][(idx%(column+1))-1] = 1
         return str2int
+
