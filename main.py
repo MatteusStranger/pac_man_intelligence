@@ -6,6 +6,8 @@ from searches import anne
 from tools.desenha_mapa import desenha_mapa
 from randomfill.generate import map_template
 import io
+
+
 def main():
     mapa = {}
     chars = ['c']
@@ -13,7 +15,7 @@ def main():
     fim = None
     largura = 0
     altura = 0
-    static_map =False
+    static_map = False
     if static_map:
         fp = open('./maze/maze.in', 'r')
     else:
@@ -31,12 +33,12 @@ def main():
             altura += 1
 
     fp.close()
-    #path = dfs.depth_first_search(mapa, inicio, fim)
-    #path = astar.aestrela(mapa, inicio, fim)
-    #path = bfs.breadth_first_search(mapa,inicio,fim)
-    #path = best.best_first_search(mapa, inicio, fim)
-    path = anne.simulated_annealing(mapa,inicio,fim)
-    
+    # path = dfs.depth_first_search(mapa, inicio, fim)
+    # path = astar.aestrela(mapa, inicio, fim)
+    # path = bfs.breadth_first_search(mapa,inicio,fim)
+    # path = best.best_first_search(mapa, inicio, fim)
+    path = anne.simulated_annealing(mapa, inicio, fim)
+
     if (path != None):
         print()
         print('Nos expandidos')

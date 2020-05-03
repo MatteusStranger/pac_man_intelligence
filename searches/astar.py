@@ -1,5 +1,6 @@
 from tools import estrutura_dados as No
 
+
 def aestrela(mapa, inicio, fim):
     aberto = []
     fechado = []

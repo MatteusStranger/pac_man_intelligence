@@ -1,5 +1,6 @@
 from tools import estrutura_dados as No
 
+
 def best_first_search(mapa, inicio, fim):
     aberto = []
     fechado = []

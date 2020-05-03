@@ -18,12 +18,13 @@ class No:
 
 class Fila:
     "A container with a first-in-first-out (FIFO) queuing policy."
+
     def __init__(self):
         self.list = []
 
-    def push(self,item):
+    def push(self, item):
         "Enqueue the 'item' into the queue"
-        self.list.insert(0,item)
+        self.list.insert(0, item)
 
     def pop(self):
         """

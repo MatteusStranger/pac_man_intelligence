@@ -4,6 +4,7 @@ def desenha_mapa(mapa, largura, altura, espaco=2, **kwargs):
             print('%%-%ds' % espaco % desenho(mapa, (x, y), kwargs), end='')
         print()
 
+
 def desenho(mapa, posicao, kwargs):
     valor = mapa.get(posicao)
 
