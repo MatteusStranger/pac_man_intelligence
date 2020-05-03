@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c72cc70c-739d-46f9-a092-8c91aac617b1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/searches/anne.py" beforeDir="false" afterPath="$PROJECT_DIR$/searches/anne.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/searches/astar.py" beforeDir="false" afterPath="$PROJECT_DIR$/searches/astar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/searches/best.py" beforeDir="false" afterPath="$PROJECT_DIR$/searches/best.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/conversor.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/conversor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/desenha_mapa.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/desenha_mapa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/estrutura_dados.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/estrutura_dados.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +57,7 @@
       <workItem from="1587499665073" duration="969000" />
       <workItem from="1587506073647" duration="5758000" />
       <workItem from="1587512345357" duration="3193000" />
-      <workItem from="1588525363704" duration="332000" />
+      <workItem from="1588525363704" duration="692000" />
     </task>
     <servers />
   </component>
