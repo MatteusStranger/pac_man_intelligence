@@ -1,0 +1,3 @@
+BFS
+Time spent to run BFS algorithm 0.003277405799999997
+Contagem: 52
