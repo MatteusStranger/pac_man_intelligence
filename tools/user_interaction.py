@@ -3,11 +3,13 @@ def clear_report():
     f.write('')
     f.close()
 
+
 def write_text(text):
     f = open("report.docx", "a")
-    #print(text)
+    # print(text)
     f.write(str(text) + '\n')
     f.close()
+
 
 def inicializa():
     print('Pacman, o nosso herói, deve usar todo o seu raciocínio e sagacidade para chegar ao seu objetivo.')
