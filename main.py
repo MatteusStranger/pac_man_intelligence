@@ -25,7 +25,7 @@ def desenha_caminho(path, mapa, largura, altura, inicio, fim):
         user.write_text("##################################\n\n")
         print()
     else:
-        print('Não há caminho')
+        user.write_text('Não há caminho')
 
 
 def executa(n_times, mapa, inicio, fim, largura, altura, i):
