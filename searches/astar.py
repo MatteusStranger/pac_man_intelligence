@@ -1,7 +1,8 @@
 from tools import estrutura_dados as No
+from tools import heuristicas as h
 
 
-def aestrela(mapa, inicio, fim):
+def aestrela(mapa, inicio, fim, heuristica):
     aberto = []
     fechado = []
 
@@ -32,10 +33,18 @@ def aestrela(mapa, inicio, fim):
 
             if (vizinho in fechado):
                 continue
-            vizinho.g = abs(vizinho.posicao[0] - inicio_no.posicao[0]) + abs(
-                vizinho.posicao[1] - inicio_no.posicao[1])
-            vizinho.h = abs(vizinho.posicao[0] - objetivo_no.posicao[0]) + abs(
-                vizinho.posicao[1] - objetivo_no.posicao[1])
+
+            if (heuristica == 1):
+
+                vizinho.g = h.distancia_manhattan(vizinho.posicao[0], inicio_no.posicao[0], vizinho.posicao[1],
+                                                  inicio_no.posicao[1])
+                vizinho.h = h.distancia_manhattan(vizinho.posicao[0], objetivo_no.posicao[0], vizinho.posicao[1],
+                                                  objetivo_no.posicao[1])
+            else:
+                vizinho.g = h.euclidiano(vizinho.posicao[0], inicio_no.posicao[0], vizinho.posicao[1],
+                                         inicio_no.posicao[1])
+                vizinho.h = h.euclidiano(vizinho.posicao[0], objetivo_no.posicao[0], vizinho.posicao[1],
+                                         objetivo_no.posicao[1])
             vizinho.f = vizinho.g + vizinho.h
             for no in aberto:
                 if (vizinho == no and vizinho.f > no.f):

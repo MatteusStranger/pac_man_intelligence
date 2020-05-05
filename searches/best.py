@@ -1,7 +1,8 @@
 from tools import estrutura_dados as No
+from tools import heuristicas as h
 
 
-def best_first_search(mapa, inicio, fim):
+def best_first_search(mapa, inicio, fim, heuristica):
     aberto = []
     fechado = []
 
@@ -41,10 +42,17 @@ def best_first_search(mapa, inicio, fim):
 
             if (vizinho in fechado):
                 continue
-            vizinho.g = abs(vizinho.posicao[0] - no_inicio.posicao[0]) + abs(
-                vizinho.posicao[1] - no_inicio.posicao[1])
-            vizinho.h = abs(vizinho.posicao[0] - objetivo.posicao[0]) + abs(
-                vizinho.posicao[1] - objetivo.posicao[1])
+
+            if (heuristica == 1):
+                vizinho.g = h.distancia_manhattan(vizinho.posicao[0], no_inicio.posicao[0], vizinho.posicao[1],
+                                                  no_inicio.posicao[1])
+                vizinho.h = h.distancia_manhattan(vizinho.posicao[0], objetivo.posicao[0], vizinho.posicao[1],
+                                                  objetivo.posicao[1])
+            else:
+                vizinho.g = h.euclidiano(vizinho.posicao[0], no_inicio.posicao[0], vizinho.posicao[1],
+                                         no_inicio.posicao[1])
+                vizinho.h = h.euclidiano(vizinho.posicao[0], objetivo.posicao[0], vizinho.posicao[1],
+                                         objetivo.posicao[1])
             vizinho.f = vizinho.h
 
             for no in aberto:
