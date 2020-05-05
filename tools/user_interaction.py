@@ -1,3 +1,14 @@
+def clear_report():
+    f = open("report.txt", "w")
+    f.write('')
+    f.close()
+
+def write_text(text):
+    f = open("report.txt", "a")
+    #print(text)
+    f.write(str(text) + '\n')
+    f.close()
+
 def inicializa():
     print('Pacman, o nosso herói, deve usar todo o seu raciocínio e sagacidade para chegar ao seu objetivo.')
     print('Ele foi colocado em um labirinto com um objetivo final a ser alcançado.')
@@ -12,7 +23,9 @@ def inicializa():
     print('1. Mapa estático')
     print('2. Mapa aleatório')
     print()
-    return int(input())
+    mapa = int(input())
+    clear_report()
+    return mapa
 
 
 def algoritmo_options():
