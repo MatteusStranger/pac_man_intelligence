@@ -11,9 +11,6 @@ def monitor():
     print((f"{cpu}%"))
     write_text(f"Uso de CPU {cpu}%")
     print()
-    cpu = p.cpu_affinity()
-    print(f"CPU núcleos {cpu}")
-    write_text(f"Cores {cpu}%")
 
     print()
     mem = (p.memory_percent() * 100)
