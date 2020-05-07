@@ -1,41 +1,7 @@
-DFS
-Time spend to run  DFS algorithm 0.021286675779992947
-Uso de CPU 0.0%
-Uso de memória 42.49609827317122%
-Processos em execução 242
-Contagem: 41
-##################################
-
-
-AStar
-Time spend to run A* algorithm 0.0011013975300011225
-Uso de CPU 0.1%
-Uso de memória 42.66223631878367%
-Processos em execução 243
-Contagem: 23
-##################################
-
-
-BFS
-Time spend to run BFS algorithm 0.01805337249999866
-Uso de CPU 0.0%
-Uso de memória 42.66223631878367%
-Processos em execução 242
-Contagem: 29
-##################################
-
-
 Best First
-Time spend to run Best first search algorithm 0.0017866225100078737
-Uso de CPU 0.0%
-Uso de memória 42.66223631878367%
-Processos em execução 242
-Contagem: 49
-##################################
-
-
-Simulated Annealing
-Time spend to run anneling algorithm 0.08863004046001151
-Uso de CPU 0.0%
-Uso de memória 42.6773397774757%
-Processos em execução 243
+0.0026
+7.00
+0.42420580979711014
+0
+245
+58
