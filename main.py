@@ -18,29 +18,36 @@ def desenha_caminho(path, mapa, largura, altura, inicio, fim):
         print()
         print(path)
         print()
+        # Método feito para desenhar o caminho do nosso heroi na tela
         desenha_mapa(mapa, largura, altura, espaco=1, path=path, inicio=inicio, objetivo=fim)
         print()
+        # Custo do caminho
         print('Contagem: {0}'.format(len(path)))
         user.write_text('Contagem: {0}'.format(len(path)))
         user.write_text("##################################\n\n")
         print()
     else:
+        # Caso não haja caminho
         print('Não há caminho')
         user.write_text('Não há caminho')
 
-
+# Responsável pela execução dos algoritmos, de acordo com as regras de interação com usuário
 def executa(n_times, mapa, inicio, fim, largura, altura, i):
     if (i == 0):
         print()
         print('DFS')
         user.write_text('DFS')
         print()
+        # O timer indica o tempo de execução do algoritmo em segundos
         t = Timer(lambda: dfs.depth_first_search(mapa, inicio, fim))
         tempo = t.timeit(number=n_times) / n_times
         print(f"Time spend to run  DFS algorithm {tempo:0.4f}s")
         user.write_text(f"Time spend to run  DFS algorithm {tempo:0.4f}s")
+
+        # Chama o monitor de recursos para avaliar o custo de hardware da solução
         monitor.monitor()
         #user.write_text(monitor.monitor())
+        # Chama o caminho percorrido
         path = dfs.depth_first_search(mapa, inicio, fim)
         desenha_caminho(path, mapa, largura, altura, inicio, fim)
         print()
@@ -160,5 +167,5 @@ def main():
         else:
             print('Opção Inválida')
 
-
+# O método main inicia por aqui
 if __name__ == "__main__": main()
