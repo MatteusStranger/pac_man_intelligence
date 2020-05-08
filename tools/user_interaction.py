@@ -1,3 +1,5 @@
+# Os dois métodos abaixo manipulam o relatório de execução
+
 def clear_report():
     f = open("report.docx", "w")
     f.write('')
@@ -9,7 +11,7 @@ def write_text(text):
     f.write(str(text) + '\n')
     f.close()
 
-
+# Interações com o usuário
 def inicializa():
     print('Pacman, o nosso herói, foi colocado em um calabouço na forma de labirinto por um terrível mago ')
     print('E só pode sair se alcançar o objetivo $. ')

@@ -2,9 +2,9 @@ class No:
     def __init__(self, posicao: (), pai: ()):
         self.posicao = posicao
         self.pai = pai
-        self.g = 0
-        self.h = 0
-        self.f = 0
+        self.g = 0 # Distância para iniciar o nó
+        self.h = 0 # Distância ao nó da meta
+        self.f = 0 # Custo total
 
     def __eq__(self, outro):
         return self.posicao == outro.posicao
@@ -17,22 +17,14 @@ class No:
 
 
 class Fila:
-    "A container with a first-in-first-out (FIFO) queuing policy."
-
     def __init__(self):
         self.list = []
 
     def push(self, item):
-        "Enqueue the 'item' into the queue"
         self.list.insert(0, item)
 
     def pop(self):
-        """
-          Dequeue the earliest enqueued item still in the queue. This
-          operation removes the item from the queue.
-        """
         return self.list.pop()
 
     def isEmpty(self):
-        "Returns true if the queue is empty"
         return len(self.list) == 0

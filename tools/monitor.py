@@ -2,11 +2,13 @@ import psutil
 import os
 from tools.user_interaction import write_text
 
+# Retorna o uso de CPU, Memória, Swap e quantidade de processos em execução
 
 def monitor():
     #### CPU #####
 
     print()
+    # Captura o processo que representa o Pacman no SO
     p = psutil.Process(os.getpid())
     print("Uso de CPU: ", end='')
     cpu = psutil.cpu_percent(interval=0.0)

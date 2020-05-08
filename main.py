@@ -20,13 +20,13 @@ def desenha_caminho(path, mapa, largura, altura, inicio, fim):
         print()
         desenha_mapa(mapa, largura, altura, espaco=1, path=path, inicio=inicio, objetivo=fim)
         print()
-        print('Custo: {0}'.format(len(path)))
-        user.write_text('{0}'.format(len(path)))
-        #user.write_text("##################################\n\n")
+        print('Contagem: {0}'.format(len(path)))
+        user.write_text('Contagem: {0}'.format(len(path)))
+        user.write_text("##################################\n\n")
         print()
     else:
         print('Não há caminho')
-        user.write_text('0')
+        user.write_text('Não há caminho')
 
 
 def executa(n_times, mapa, inicio, fim, largura, altura, i):
@@ -38,7 +38,7 @@ def executa(n_times, mapa, inicio, fim, largura, altura, i):
         t = Timer(lambda: dfs.depth_first_search(mapa, inicio, fim))
         tempo = t.timeit(number=n_times) / n_times
         print(f"Time spend to run  DFS algorithm {tempo:0.4f}s")
-        user.write_text(f"{tempo:0.4f}")
+        user.write_text(f"Time spend to run  DFS algorithm {tempo:0.4f}s")
         monitor.monitor()
         #user.write_text(monitor.monitor())
         path = dfs.depth_first_search(mapa, inicio, fim)
@@ -55,7 +55,7 @@ def executa(n_times, mapa, inicio, fim, largura, altura, i):
         t2 = Timer(lambda: astar.aestrela(mapa, inicio, fim, heuristica))
         tempo = t2.timeit(number=n_times) / n_times
         print(f"Time spend to run A* algorithm {tempo:0.4f}s")
-        user.write_text(f"{tempo:0.4f}")
+        user.write_text(f"Time spend to run A* algorithm {tempo:0.4f}s")
 
         monitor.monitor()
 
@@ -68,7 +68,7 @@ def executa(n_times, mapa, inicio, fim, largura, altura, i):
         t3 = Timer(lambda: bfs.breadth_first_search(mapa, inicio, fim))
         tempo = t3.timeit(number=n_times) / n_times
         print(f"Time spend to run BFS algorithm {tempo:0.4f}s")
-        user.write_text(f"{tempo:0.4f}")
+        user.write_text(f"Time spend to run BFS algorithm {tempo:0.4f}s")
 
         monitor.monitor()
 
@@ -86,7 +86,7 @@ def executa(n_times, mapa, inicio, fim, largura, altura, i):
 
         print(f"Time spend to run Best first search algorithm {tempo:0.4f}s")
 
-        user.write_text(f"{tempo:0.4f}")
+        user.write_text(f"Time spend to run Best first search algorithm {tempo:0.4f}s")
 
         monitor.monitor()
 
@@ -100,7 +100,7 @@ def executa(n_times, mapa, inicio, fim, largura, altura, i):
         tempo = t5.timeit(number=n_times) / n_times
 
         print(f"Time spend to run anneling algorithm {tempo:0.4f}s")
-        user.write_text(f"{tempo:0.4f}")
+        user.write_text(f"Time spend to run anneling algorithm {tempo:0.4f}s")
 
         monitor.monitor()
 
