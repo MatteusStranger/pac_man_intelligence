@@ -12,6 +12,15 @@ The user is shown the total map, with our hero, ghosts, obstacles, objectives an
 
 Enjoy!
 
+### Autores
+
+- Matteus Vargas 262885 
+- Christian Maekawa 231867 
+- Stéfani Fernandes 147939 
+- Maisa Silva 181831 
+- Giovane de Morais 192683
+
+
 # Requisites
 ## Download Git
 
