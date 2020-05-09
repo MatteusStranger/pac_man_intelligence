@@ -17,8 +17,8 @@ Enjoy!
 - Matteus Vargas (ra: 262885)
 - Christian Maekawa (ra: 231867)
 - Stéfani Fernandes (ra: 147939)
-- Maisa Silva (ra 181831)
-- Giovane de Morais (ra 192683)
+- Maisa Silva (ra: 181831)
+- Giovane de Morais (ra: 192683)
 
 
 # Requisites
