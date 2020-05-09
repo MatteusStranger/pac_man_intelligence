@@ -56,7 +56,7 @@ pip install -r requirements.txt
 
 #### Run using python
 `````
-python main.py
+python3 main.py
 `````
 
 #### Open using jupyter notebook
@@ -125,11 +125,4 @@ Copy token if necessary
 docker stop mo416_project1
 docker rm mo416_project1
 docker rmi jupyter_slim
-`````
-# Execution
-
-* Just enter this command line:
-
-`````
-python3 main.py
 `````
