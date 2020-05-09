@@ -1,3 +1,8 @@
+# MC906A/MO416A - Introducition to Artificial Intelligence
+## Institute of Computing - Unicamp
+### Project I
+
+
 # Pac Man Intelligence
 
 Pacman is one of the most famous arcade games of all time. In this present version, pacman must collect pills, dodge obstacles and escape from ghosts in order to reach the final goal. However, he must do this intelligently and sagaciously.
