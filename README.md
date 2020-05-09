@@ -138,3 +138,5 @@ docker stop mo416_project1
 docker rm mo416_project1
 docker rmi jupyter_slim
 `````
+
+<img src="https://github.com/MatteusStranger/pac_man_intelligence/blob/master/Relatorio/ImagensIA/tutorial.gif" width="800" height="400"/>
