@@ -1,5 +1,16 @@
 # Pac Man Intelligence
 
+Pacman is one of the most famous arcade games of all time. In this present version, pacman must collect pills, dodge obstacles and escape from ghosts in order to reach the final goal. However, he must do this intelligently and sagaciously.
+This work presents five ways to solve the Pacman problem:
+- Two blind searches: Breadth First Search (BFS), Depth First Search (DFS);
+- Two informed searches: AStar, Best First Search
+  - Two Heuristics: Distance from Manhattan and Euclidean
+- A local search: Simulated Annealing
+
+The user can choose the algorithm to be executed and the type of map to be generated.
+The user is shown the total map, with our hero, ghosts, obstacles, objectives and final path, in addition to the log of use of hardware resources and cost of the solution, leaving the user to draw their conclusions.
+
+Enjoy!
 
 # Requisites
 ## Download Git
