@@ -31,6 +31,7 @@ def desenha_caminho(path, mapa, largura, altura, inicio, fim):
         print('Não há caminho')
         user.write_text('Não há caminho')
 
+
 # Responsável pela execução dos algoritmos, de acordo com as regras de interação com usuário
 def executa(n_times, mapa, inicio, fim, largura, altura, i):
     if (i == 0):
@@ -46,7 +47,7 @@ def executa(n_times, mapa, inicio, fim, largura, altura, i):
 
         # Chama o monitor de recursos para avaliar o custo de hardware da solução
         monitor.monitor()
-        #user.write_text(monitor.monitor())
+        # user.write_text(monitor.monitor())
         # Chama o caminho percorrido
         path = dfs.depth_first_search(mapa, inicio, fim)
         desenha_caminho(path, mapa, largura, altura, inicio, fim)
@@ -57,16 +58,26 @@ def executa(n_times, mapa, inicio, fim, largura, altura, i):
         print('AStar')
         user.write_text('AStar')
         print()
-        heuristica = user.define_heuristica()
+        # heuristica = user.define_heuristica()
         print()
-        t2 = Timer(lambda: astar.aestrela(mapa, inicio, fim, heuristica))
+        t2 = Timer(lambda: astar.aestrela(mapa, inicio, fim, 1))
         tempo = t2.timeit(number=n_times) / n_times
         print(f"Time spend to run A* algorithm {tempo:0.4f}s")
         user.write_text(f"Time spend to run A* algorithm {tempo:0.4f}s")
 
-        monitor.monitor()
+        t2 = Timer(lambda: astar.aestrela(mapa, inicio, fim, 2))
+        tempo = t2.timeit(number=n_times) / n_times
+        print(f"Time spend to run A* algorithm {tempo:0.4f}s")
+        user.write_text(f"Time spend to run A* algorithm {tempo:0.4f}s")
 
-        path = astar.aestrela(mapa, inicio, fim, heuristica)
+        # monitor.monitor()
+        print()
+        print('Heurística - Distância de Manhattan')
+        path = astar.aestrela(mapa, inicio, fim, 1)
+        desenha_caminho(path, mapa, largura, altura, inicio, fim)
+        print()
+        print('Heurística - Distância Euclidiana')
+        path = astar.aestrela(mapa, inicio, fim, 2)
         desenha_caminho(path, mapa, largura, altura, inicio, fim)
     if (i == 2):
         print()
@@ -86,19 +97,30 @@ def executa(n_times, mapa, inicio, fim, largura, altura, i):
         print('Best First')
         user.write_text('Best First')
         print()
-        heuristica = user.define_heuristica()
+        # heuristica = user.define_heuristica()
         print()
-        t4 = Timer(lambda: best.best_first_search(mapa, inicio, fim, heuristica))
+        t4 = Timer(lambda: best.best_first_search(mapa, inicio, fim, 1))
         tempo = t4.timeit(number=n_times) / n_times
 
         print(f"Time spend to run Best first search algorithm {tempo:0.4f}s")
 
         user.write_text(f"Time spend to run Best first search algorithm {tempo:0.4f}s")
 
-        monitor.monitor()
+        t4 = Timer(lambda: best.best_first_search(mapa, inicio, fim, 2))
+        tempo = t4.timeit(number=n_times) / n_times
+        print(f"Time spend to run Best first search algorithm {tempo:0.4f}s")
+        user.write_text(f"Time spend to run Best first search algorithm {tempo:0.4f}s")
 
-        path = best.best_first_search(mapa, inicio, fim, heuristica)
+        monitor.monitor()
+        print()
+        print('Heurística - Distância de Manhattan')
+        path = best.best_first_search(mapa, inicio, fim, 1)
         desenha_caminho(path, mapa, largura, altura, inicio, fim)
+        print()
+        print('Heurística - Distância Euclidiana')
+        path = best.best_first_search(mapa, inicio, fim, 2)
+        desenha_caminho(path, mapa, largura, altura, inicio, fim)
+
     if (i == 4):
         print()
         print('Simulated Annealing')
@@ -166,6 +188,7 @@ def main():
                 print('Opção inválida')
         else:
             print('Opção Inválida')
+
 
 # O método main inicia por aqui
 if __name__ == "__main__": main()

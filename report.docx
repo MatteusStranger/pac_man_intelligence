@@ -1,0 +1,56 @@
+DFS
+Time spend to run  DFS algorithm 0.0034s
+Uso de CPU: 5.00%
+Uso de memoria: 0.42365222959886706%
+Uso de swap: 0%
+PIDS (processos rodando no sistema): 229
+Contagem: 80
+##################################
+
+
+AStar
+Time spend to run A* algorithm 0.0174s
+Time spend to run A* algorithm 0.0047s
+Contagem: 52
+##################################
+
+
+Contagem: 58
+##################################
+
+
+BFS
+Time spend to run BFS algorithm 0.0083s
+Uso de CPU: 35.70%
+Uso de memoria: 0.4290391325777237%
+Uso de swap: 0%
+PIDS (processos rodando no sistema): 229
+Contagem: 52
+##################################
+
+
+Best First
+Time spend to run Best first search algorithm 0.0034s
+Time spend to run Best first search algorithm 0.0025s
+Uso de CPU: 27.10%
+Uso de memoria: 0.4290391325777237%
+Uso de swap: 0%
+PIDS (processos rodando no sistema): 229
+Contagem: 68
+##################################
+
+
+Contagem: 58
+##################################
+
+
+Simulated Annealing
+Time spend to run anneling algorithm 0.1886s
+Uso de CPU: 26.30%
+Uso de memoria: 0.43065016898261543%
+Uso de swap: 0%
+PIDS (processos rodando no sistema): 228
+Contagem: 778
+##################################
+
+
