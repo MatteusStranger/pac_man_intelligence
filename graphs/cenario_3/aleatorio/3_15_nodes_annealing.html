@@ -9,20 +9,17 @@
    </head>
    
    <body>
-      <div id = "container" style = "width: 650px; height: 500px; margin: 0 auto">
+      <div id = "container" style = "width: 700px; height: 550px; margin: 0 auto">
       </div>
       <script language = "JavaScript">
          function drawChart() {
             // Define the chart to be drawn.
             var data = google.visualization.arrayToDataTable([
-          ['Algoritmo','Tempo de execução (segundos)','Manhattan (Tempo)','Euclides (Tempo)'],
-          ['DFS',{v: 0.0014, f: 0.0014},0,0],
-          ['A*',,{v: 0.0032, f: 0.0032},{v: 0.0021, f: 0.0021}],
-          ['Best First',,{v: 0.0011, f: 0.0011},{v: 0.0012, f: 0.0012}],
-          ['BFS',{v: 0.0047, f: 0.0047},0,0]
+          ['Algoritmo','Nós Expandidos','Manhattan (Nós)','Euclides (Nós)'],
+          ['Simulated Annealing',1240,0,0]
         ]);
 
-        var options = {title: 'Tempo de execução dos algoritmos no Mapa Aleatório com três fantasmas'}; 
+        var options = {title: 'Nós expandidos pelo Simulated Annealing no Mapa Estático com 15 fantasmas'}; 
 
             // Instantiate and draw the chart.
             var chart = new google.visualization.ColumnChart(document.getElementById('container'));
