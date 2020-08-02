@@ -1,0 +1,176 @@
+MAPA ALEATORIO 1:
+
+DFS
+Time spend to run  DFS algorithm 0.0017s
+Uso de CPU: 5.70%
+Uso de memoria: 0.13987229681031765%
+Uso de swap: 0%
+PIDS (processos rodando no sistema): 11
+Contagem: 43
+##################################
+
+
+AStar
+Time spend to run A* algorithm 0.0000s
+Time spend to run A* algorithm 0.0000s
+Contagem: 5
+##################################
+
+
+Contagem: 5
+##################################
+
+
+BFS
+Time spend to run BFS algorithm 0.0001s
+Uso de CPU: 7.70%
+Uso de memoria: 0.14059664842507852%
+Uso de swap: 0%
+PIDS (processos rodando no sistema): 11
+Contagem: 5
+##################################
+
+
+Best First
+Time spend to run Best first search algorithm 0.0001s
+Time spend to run Best first search algorithm 0.0001s
+Uso de CPU: 14.00%
+Uso de memoria: 0.14059664842507852%
+Uso de swap: 0%
+PIDS (processos rodando no sistema): 11
+Contagem: 5
+##################################
+
+
+Contagem: 5
+##################################
+
+
+Simulated Annealing
+Time spend to run anneling algorithm 0.0048s
+Uso de CPU: 10.50%
+Uso de memoria: 0.14151416047044224%
+Uso de swap: 0%
+PIDS (processos rodando no sistema): 11
+Contagem: 103
+##################################
+
+
+################################################################################################
+MAPA ALEATORIO 2:
+
+DFS
+Time spend to run  DFS algorithm 0.0012s
+Uso de CPU: 4.70%
+Uso de memoria: 0.13992058691796838%
+Uso de swap: 0%
+PIDS (processos rodando no sistema): 11
+Contagem: 41
+##################################
+
+
+AStar
+Time spend to run A* algorithm 0.0002s
+Time spend to run A* algorithm 0.0001s
+Contagem: 15
+##################################
+
+
+Contagem: 15
+##################################
+
+
+BFS
+Time spend to run BFS algorithm 0.0016s
+Uso de CPU: 11.10%
+Uso de memoria: 0.14066908358655458%
+Uso de swap: 0%
+PIDS (processos rodando no sistema): 11
+Contagem: 15
+##################################
+
+
+Best First
+Time spend to run Best first search algorithm 0.0002s
+Time spend to run Best first search algorithm 0.0002s
+Uso de CPU: 7.50%
+Uso de memoria: 0.14066908358655458%
+Uso de swap: 0%
+PIDS (processos rodando no sistema): 11
+Contagem: 15
+##################################
+
+
+Contagem: 15
+##################################
+
+
+Simulated Annealing
+Time spend to run anneling algorithm 0.0147s
+Uso de CPU: 10.80%
+Uso de memoria: 0.14168317584721976%
+Uso de swap: 0%
+PIDS (processos rodando no sistema): 11
+Contagem: 509
+##################################
+
+
+################################################################################################
+MAPA ALEATORIO 3:
+
+DFS
+Time spend to run  DFS algorithm 0.0014s
+Uso de CPU: 6.50%
+Uso de memoria: 0.13987229681031765%
+Uso de swap: 0%
+PIDS (processos rodando no sistema): 11
+Contagem: 56
+##################################
+
+
+AStar
+Time spend to run A* algorithm 0.0031s
+Time spend to run A* algorithm 0.0005s
+Contagem: 32
+##################################
+
+
+Contagem: 32
+##################################
+
+
+BFS
+Time spend to run BFS algorithm 0.0106s
+Uso de CPU: 11.80%
+Uso de memoria: 0.1409105341248082%
+Uso de swap: 0%
+PIDS (processos rodando no sistema): 11
+Contagem: 32
+##################################
+
+
+Best First
+Time spend to run Best first search algorithm 0.0004s
+Time spend to run Best first search algorithm 0.0004s
+Uso de CPU: 12.90%
+Uso de memoria: 0.1409105341248082%
+Uso de swap: 0%
+PIDS (processos rodando no sistema): 11
+Contagem: 36
+##################################
+
+
+Contagem: 36
+##################################
+
+
+Simulated Annealing
+Time spend to run anneling algorithm 0.0284s
+Uso de CPU: 9.90%
+Uso de memoria: 0.14180390111634655%
+Uso de swap: 0%
+PIDS (processos rodando no sistema): 11
+Contagem: 674
+##################################
+
+
