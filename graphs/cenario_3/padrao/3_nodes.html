@@ -1,0 +1,35 @@
+<html>
+   <head>
+      <title>Google Charts Tutorial</title>
+      <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js">
+      </script>
+      <script type = "text/javascript">
+         google.charts.load('current', {packages: ['corechart']});     
+      </script>
+   </head>
+   
+   <body>
+      <div id = "container" style = "width: 700px; height: 550px; margin: 0 auto">
+      </div>
+      <script language = "JavaScript">
+         function drawChart() {
+            // Define the chart to be drawn.
+            var data = google.visualization.arrayToDataTable([
+          ['Algoritmo','Nós Expandidos','Manhattan (Nós)','Euclides (Nós)'],
+          ['DFS',80,0,0],
+          ['A*',,52,58],
+          ['Best First',,68,58],
+          ['BFS',52,0,0],
+          ['Simulated Annealing',0,0,0]
+        ]);
+
+        var options = {title: 'Nós expandidos pelos algoritmos no Mapa Estático com 10 fantasmas'}; 
+
+            // Instantiate and draw the chart.
+            var chart = new google.visualization.ColumnChart(document.getElementById('container'));
+            chart.draw(data, options);
+         }
+         google.charts.setOnLoadCallback(drawChart);
+      </script>
+   </body>
+</html>

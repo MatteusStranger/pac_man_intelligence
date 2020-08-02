@@ -1,0 +1,35 @@
+<html>
+   <head>
+
+      <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js">
+      </script>
+      <script type = "text/javascript">
+         google.charts.load('current', {packages: ['corechart']});     
+      </script>
+   </head>
+   
+   <body>
+      <div id = "container" style = "width: 850px; height: 700px; margin: 0 auto">
+      </div>
+      <script language = "JavaScript">
+         function drawChart() {
+            // Define the chart to be drawn.
+            var data = google.visualization.arrayToDataTable([
+          ['Algoritmo','Tempo de execução (segundos)','Manhattan (Tempo)','Euclides (Tempo)'],
+          ['DFS',{v: 0.0261, f: 0.0261},0,0],
+          ['A*',,{v: 0.0032, f: 0.0032},{v: 0.0032, f: 0.0032}],
+          ['Best First',,{v: 0.0017, f: 0.0017},{v: 0.0015, f: 0.0015}],
+          ['BFS',{v: 0.0144, f: 0.0144},0,0],
+          ['Simulated Annealing',{v: 0.1679, f: 0.1679},0,0]
+        ]);
+
+        var options = {title: 'Tempo de execução dos algoritmos no Mapa Aleatório com 15 fantasmas'}; 
+
+            // Instantiate and draw the chart.
+            var chart = new google.visualization.ColumnChart(document.getElementById('container'));
+            chart.draw(data, options);
+         }
+         google.charts.setOnLoadCallback(drawChart);
+      </script>
+   </body>
+</html>

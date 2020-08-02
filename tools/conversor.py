@@ -57,7 +57,7 @@ class conversor:
                 elif maze[i][j] == 3:
                     int2str = int2str + ' '
                 elif maze[i][j] == 4:
-                    int2str = int2str + '#'
+                    int2str = int2str + '&'
                 elif maze[i][j] == 5:
                     int2str = int2str + '$'
             int2str = int2str + '\n'

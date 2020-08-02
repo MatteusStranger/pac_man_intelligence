@@ -117,7 +117,7 @@ def map_template(row=31,column=28):
     temp_map = generateDefaultRandomMap()
     np_map = conversor.conv_str2int(row,column,temp_map)
     add_hole(10,np_map,inplace=True)
-    add_block(3,np_map,inplace=True)
+    add_block(15,np_map,inplace=True)
     start_position = available_path(np_map)[:1][0]
     end_position = available_path(np_map)[:1][0]
     np_map[start_position[0]][start_position[1]] = 2
